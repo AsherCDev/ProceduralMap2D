@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     public Slider scaleSlider;
+    public Slider speedSlider;
     public Slider waterLevel;
     public Slider sandLevel;
     public Slider grassLevel;
@@ -21,6 +22,10 @@ public class UIController : MonoBehaviour
         scaleSlider.minValue = 20;
         scaleSlider.maxValue = 60;
         scaleSlider.value = 40;
+
+        speedSlider.minValue = 5;
+        speedSlider.maxValue = 15;
+        speedSlider.value = 8;
 
         waterLevel.maxValue = 5;
         waterLevel.value = 2;
@@ -37,6 +42,7 @@ public class UIController : MonoBehaviour
 
     private void ApplyChanges()
     {
+        Dynamic.Player.speed = speedSlider.value;
         Dynamic.MapData.scale = scaleSlider.value;
         Dynamic.MapData.layers = new List<float>
             { waterLevel.value / 2, waterLevel.value, sandLevel.value, grassLevel.value };

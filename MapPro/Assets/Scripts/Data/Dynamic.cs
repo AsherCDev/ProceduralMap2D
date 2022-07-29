@@ -6,6 +6,7 @@ public static class Dynamic
 {
     public static class Player
     {
+        public static float speed = 8;
         public static Vector2Int chunkPosition;
         public static Transform playerTransform;
         

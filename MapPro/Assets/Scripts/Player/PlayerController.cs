@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
             // Calculates and executes x and y speeds from user inputs
             float angle = Mathf.Atan2(input.y, input.x);
             input = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
-            _rb.MovePosition(_rb.position + input * Constant.Player.moveSpeed * Time.fixedDeltaTime);
+            _rb.MovePosition(_rb.position + input * Dynamic.Player.speed * Time.fixedDeltaTime);
             
             // If the movement direction changes, start rotating toward the new direction
             if (angle != _angle)
