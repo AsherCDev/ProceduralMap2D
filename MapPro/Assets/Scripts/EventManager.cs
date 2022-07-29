@@ -19,4 +19,14 @@ public class EventManager : MonoBehaviour
             onChunkUpdate();
         }
     }
+
+    public event Action onMapUpdate;
+
+    public void UpdateMap()
+    {
+        if (onMapUpdate != null)
+        {
+            onMapUpdate();
+        }
+    }
 }

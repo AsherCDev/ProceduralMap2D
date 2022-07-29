@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 using UnityEngine;
 
 public static class Dynamic
@@ -23,5 +24,11 @@ public static class Dynamic
 
         }
         
+    }
+
+    public static class MapData
+    {
+        public static List<float> layers = new List<float>{1, 2, 3, 8};
+        public static float scale;
     }
 }

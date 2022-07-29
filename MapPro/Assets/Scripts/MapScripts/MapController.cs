@@ -16,6 +16,8 @@ public class MapController : MonoBehaviour
         _tileMap = GetComponent<Tilemap>();
         EventManager.instance.onChunkUpdate += UpdateChunks;
         _landMap = new LandMap();
+        EventManager.instance.onMapUpdate += _landMap.UpdateMap;
+        EventManager.instance.onMapUpdate += UpdateChunks;
     }
 
     private void UpdateChunks()

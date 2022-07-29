@@ -15,12 +15,13 @@ public class PlayerController : MonoBehaviour
         _vfx = transform.GetChild(0);
         _rb = GetComponent<Rigidbody2D>();
         _angle = -2;
+        EventManager.instance.UpdateChunks();
     }
 
     void Update()
     {
         // Inputs
-        _move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        _move = new Vector2(Input.GetAxisRaw("H"), Input.GetAxisRaw("V"));
     }
 
     private void FixedUpdate()
