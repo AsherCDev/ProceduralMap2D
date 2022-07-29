@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _angle = -2;
         EventManager.instance.UpdateChunks();
+        Dynamic.Player.playerTransform = _vfx;
     }
 
     void Update()

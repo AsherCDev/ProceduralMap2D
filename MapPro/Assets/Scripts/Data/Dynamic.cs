@@ -7,6 +7,7 @@ public static class Dynamic
     public static class Player
     {
         public static Vector2Int chunkPosition;
+        public static Transform playerTransform;
         
         public static void UpdatePosition(Vector2 position)
         {

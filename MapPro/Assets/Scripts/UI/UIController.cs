@@ -13,6 +13,8 @@ public class UIController : MonoBehaviour
     public Button applyButton;
     public Button exitButton;
 
+    public RectTransform miniMapArrow;
+
     private void Start()
     {
         // Init UI components
@@ -44,5 +46,10 @@ public class UIController : MonoBehaviour
     private void Exit()
     {
         Application.Quit();
+    }
+
+    private void Update()
+    {
+        miniMapArrow.eulerAngles = new Vector3(0, 0, Dynamic.Player.playerTransform.eulerAngles.z);
     }
 }
