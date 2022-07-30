@@ -8,15 +8,11 @@ public class LandMap
 
     private int GetLayer(float height)
     {
-        for (int i = 0; i < Dynamic.MapData.layers.Count; i++)
-        {
-            if (height <= Dynamic.MapData.layers[i])
-            {
-                return i;
-            }
-        }
-
-        return Dynamic.MapData.layers.Count;
+        float water = Dynamic.MapData.waterLevel;
+        if (height < water / 2) return 0;
+        if (height < water) return 1;
+        if (height < water + 1) return 2;
+        return 3;
     }
     
     public TileBase GetTile(int x, int y)

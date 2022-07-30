@@ -9,8 +9,6 @@ public class UIController : MonoBehaviour
     public Slider scaleSlider;
     public Slider speedSlider;
     public Slider waterLevel;
-    public Slider sandLevel;
-    public Slider grassLevel;
     public Button applyButton;
     public Button exitButton;
 
@@ -24,18 +22,12 @@ public class UIController : MonoBehaviour
         scaleSlider.value = 40;
 
         speedSlider.minValue = 5;
-        speedSlider.maxValue = 15;
+        speedSlider.maxValue = 30;
         speedSlider.value = 8;
 
-        waterLevel.maxValue = 5;
+        waterLevel.maxValue = 7;
         waterLevel.value = 2;
-        
-        sandLevel.maxValue = 7;
-        sandLevel.value = 3;
-        
-        grassLevel.maxValue = 10;
-        grassLevel.value = 8;
-        
+
         applyButton.onClick.AddListener(ApplyChanges);
         exitButton.onClick.AddListener(Exit);
     }
@@ -44,8 +36,8 @@ public class UIController : MonoBehaviour
     {
         Dynamic.Player.speed = speedSlider.value;
         Dynamic.MapData.scale = scaleSlider.value;
-        Dynamic.MapData.layers = new List<float>
-            { waterLevel.value / 2, waterLevel.value, sandLevel.value, grassLevel.value };
+        Dynamic.MapData.waterLevel = waterLevel.value;
+
         EventManager.instance.UpdateMap();
     }
 

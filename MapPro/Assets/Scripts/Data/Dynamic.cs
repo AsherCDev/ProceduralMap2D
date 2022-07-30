@@ -30,7 +30,8 @@ public static class Dynamic
 
     public static class MapData
     {
-        public static List<float> layers = new List<float>{1, 2, 3, 8};
+        // The perlin values that dictate what material is shown at any given height
+        public static float waterLevel = 2;
         public static float scale;
     }
 }
