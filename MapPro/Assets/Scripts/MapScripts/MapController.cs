@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using Random = UnityEngine.Random;
 
 public class MapController : MonoBehaviour
 {
@@ -11,13 +12,21 @@ public class MapController : MonoBehaviour
 
     private List<Vector2Int> _loadedChunks = new List<Vector2Int>();
 
+    private bool _reloading;
+
     private void Start()
     {
         _tileMap = GetComponent<Tilemap>();
         EventManager.instance.onChunkUpdate += UpdateChunks;
         _landMap = new LandMap();
         EventManager.instance.onMapUpdate += _landMap.UpdateMap;
-        EventManager.instance.onMapUpdate += UpdateChunks;
+        EventManager.instance.onMapUpdate += ApplyMapUpdate;
+    }
+
+    private void ApplyMapUpdate()
+    {
+        _reloading = true;
+        UpdateChunks();
     }
 
     private void UpdateChunks()
@@ -29,10 +38,15 @@ public class MapController : MonoBehaviour
             {
                 int chunkX = Dynamic.Player.chunkPosition.x + x;
                 int chunkY = Dynamic.Player.chunkPosition.y + y;
-                SetChunk(chunkX, chunkY, true);
-                _loadedChunks.Add(new Vector2Int(chunkX, chunkY));
+                if (!_loadedChunks.Contains(new Vector2Int(chunkX, chunkY)) || _reloading)
+                {
+                    SetChunk(chunkX, chunkY, true);
+                    _loadedChunks.Add(new Vector2Int(chunkX, chunkY));
+                }
             }
         }
+
+        _reloading = false;
 
         // Unload chunks outside of render distance
         for (int i = 0; i < _loadedChunks.Count; i++)
@@ -56,7 +70,11 @@ public class MapController : MonoBehaviour
                 if (setMode)
                 {
                     TileBase tile = _landMap.GetTile(position.x, position.y);
+                    int rot = Random.Range(0, 3);
+                    Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0f, 0f, 90f * rot), Vector3.one);
                     _tileMap.SetTile(position, tile);
+                    _tileMap.SetTransformMatrix(position, matrix);
+
                 }
                 else
                 {

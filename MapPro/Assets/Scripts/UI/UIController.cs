@@ -18,14 +18,14 @@ public class UIController : MonoBehaviour
     {
         // Init UI components
         scaleSlider.minValue = 20;
-        scaleSlider.maxValue = 60;
-        scaleSlider.value = 50;
+        scaleSlider.maxValue = 150;
+        scaleSlider.value = 100;
 
-        speedSlider.minValue = 5;
-        speedSlider.maxValue = 30;
-        speedSlider.value = 8;
+        speedSlider.minValue = 10;
+        speedSlider.maxValue = 50;
+        speedSlider.value = 20;
 
-        waterLevel.maxValue = 7;
+        waterLevel.maxValue = 6;
         waterLevel.value = 2;
 
         applyButton.onClick.AddListener(ApplyChanges);
