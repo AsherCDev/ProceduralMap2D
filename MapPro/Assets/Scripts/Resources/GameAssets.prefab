@@ -50,3 +50,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fef340a61f0dd6246b83cdd0b8ff7607, type: 2}
   - {fileID: 11400000, guid: 987e3f72fe6f87247a0bd0d35ec7beed, type: 2}
   - {fileID: 11400000, guid: 22cac786071572d4790520f3a0d845da, type: 2}
+  defaultBiome: {fileID: 11400000, guid: ffad9e727e9809a4d9fd654cc2faabb3, type: 2}
+  biomes:
+  - {fileID: 11400000, guid: 00fb14bc3394bab40894b3de4f15dfcd, type: 2}
+  - {fileID: 11400000, guid: 12c21662c16eb64428fb7afff1d4b621, type: 2}
+  - {fileID: 11400000, guid: 170a0a569e312e441ac5641f6a23f01c, type: 2}
+  - {fileID: 11400000, guid: 86f36dbc79da2a744a10f4105c9a4020, type: 2}
+  - {fileID: 11400000, guid: c2a3f2f6a9c3a084594fcf2adc026b69, type: 2}

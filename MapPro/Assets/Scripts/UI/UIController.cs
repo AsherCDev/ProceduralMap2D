@@ -19,7 +19,7 @@ public class UIController : MonoBehaviour
         // Init UI components
         scaleSlider.minValue = 20;
         scaleSlider.maxValue = 60;
-        scaleSlider.value = 40;
+        scaleSlider.value = 50;
 
         speedSlider.minValue = 5;
         speedSlider.maxValue = 30;
@@ -30,6 +30,7 @@ public class UIController : MonoBehaviour
 
         applyButton.onClick.AddListener(ApplyChanges);
         exitButton.onClick.AddListener(Exit);
+        ApplyChanges();
     }
 
     private void ApplyChanges()

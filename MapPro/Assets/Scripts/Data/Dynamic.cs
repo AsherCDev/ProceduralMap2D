@@ -6,7 +6,7 @@ public static class Dynamic
 {
     public static class Player
     {
-        public static float speed = 8;
+        public static float speed;
         public static Vector2Int chunkPosition;
         public static Transform playerTransform;
         
@@ -31,7 +31,7 @@ public static class Dynamic
     public static class MapData
     {
         // The perlin values that dictate what material is shown at any given height
-        public static float waterLevel = 2;
+        public static float waterLevel;
         public static float scale;
     }
 }

@@ -17,4 +17,7 @@ public class GameAssets : MonoBehaviour
     }
 
     public List<TileBase> landTiles;
+
+    public Biome defaultBiome;
+    public List<Biome> biomes;
 }
