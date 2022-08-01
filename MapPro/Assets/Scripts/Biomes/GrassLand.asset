@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49122365c5844ada420f3a004356559, type: 3}
   m_Name: GrassLand
   m_EditorClassIdentifier: 
-  groundTiles: []
+  groundTiles:
+  - {fileID: 11400000, guid: 06304cfe854530147b83ef79fc6edf59, type: 2}
+  - {fileID: 11400000, guid: 01a76f70c92386c4689c66c442748651, type: 2}
+  - {fileID: 11400000, guid: fef340a61f0dd6246b83cdd0b8ff7607, type: 2}
+  - {fileID: 11400000, guid: 987e3f72fe6f87247a0bd0d35ec7beed, type: 2}
   heatRange: {x: 0, y: 0}
   rainRange: {x: 0, y: 0}

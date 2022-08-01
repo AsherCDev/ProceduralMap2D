@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49122365c5844ada420f3a004356559, type: 3}
   m_Name: Desert
   m_EditorClassIdentifier: 
-  groundTiles: []
-  heatRange: {x: 0, y: 0}
-  rainRange: {x: 0, y: 0}
+  groundTiles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 5d3ac224a7726ce4caa858ab9bdc24c1, type: 2}
+  - {fileID: 11400000, guid: 5d3ac224a7726ce4caa858ab9bdc24c1, type: 2}
+  heatRange: {x: 6.5, y: 10}
+  rainRange: {x: 0, y: 4}

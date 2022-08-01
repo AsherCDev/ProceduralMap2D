@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a49122365c5844ada420f3a004356559, type: 3}
   m_Name: Temperate
   m_EditorClassIdentifier: 
-  groundTiles: []
-  heatRange: {x: 0, y: 0}
-  rainRange: {x: 0, y: 0}
+  groundTiles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 80a0986414597f14dbcd4047d810fa95, type: 2}
+  heatRange: {x: 6, y: 8}
+  rainRange: {x: 4, y: 8}
