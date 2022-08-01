@@ -5,21 +5,19 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
 
-public class GridController : MonoBehaviour
+public class GridController
 {
     private Tilemap _tileMap;
     
-    private LandMap _landMap;
     private Map _currentMap;
 
     private List<Vector2Int> _loadedChunks = new List<Vector2Int>();
     
-    private void Start()
+    public GridController(Map map, GameObject grid)
     {
-        _tileMap = GetComponent<Tilemap>();
+        _tileMap = grid.GetComponent<Tilemap>();
+        _currentMap = map;
         
-        _landMap = new LandMap();
-        _currentMap = _landMap;
         EventManager.instance.onChunkUpdate += UpdateChunks;
         EventManager.instance.onMapUpdate += _currentMap.UpdateMap;
         EventManager.instance.onMapUpdate += ReloadChunks;
