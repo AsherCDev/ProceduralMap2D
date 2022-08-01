@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     public Slider scaleSlider;
+    public Slider biomeScaleSlider;
     public Slider speedSlider;
     public Slider waterLevel;
     public Slider sharpnessSlider;
@@ -21,6 +22,7 @@ public class UIController : MonoBehaviour
         scaleSlider.minValue = 20;
         scaleSlider.maxValue = 150;
         scaleSlider.value = 100;
+        
         biomeScaleSlider.minValue = 10;
         biomeScaleSlider.maxValue = 100;
         biomeScaleSlider.value = 50;

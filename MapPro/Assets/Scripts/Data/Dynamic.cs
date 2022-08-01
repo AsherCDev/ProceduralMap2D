@@ -34,5 +34,9 @@ public static class Dynamic
         
         public static float waterLevel;
         public static float scale;
+
+        public static float biomeScale;
+
+        public static float sharpness;
     }
 }
