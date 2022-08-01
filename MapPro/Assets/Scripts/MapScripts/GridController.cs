@@ -8,31 +8,33 @@ using Random = UnityEngine.Random;
 public class GridController
 {
     private Tilemap _tileMap;
-    
-    private Map _currentMap;
+
+    private LandMap _landMap;
 
     private List<Vector2Int> _loadedChunks = new List<Vector2Int>();
     
-    public GridController(Map map, GameObject grid)
+    public GridController( GameObject grid)
     {
         _tileMap = grid.GetComponent<Tilemap>();
-        _currentMap = map;
-        
-        EventManager.instance.onChunkUpdate += UpdateChunks;
-        EventManager.instance.onMapUpdate += _currentMap.UpdateMap;
-        EventManager.instance.onMapUpdate += ReloadChunks;
+        _landMap = new LandMap();
     }
 
-    private void ReloadChunks()
+    public void ReloadChunks()
     {
         ClearAllChunks();
         UpdateChunks();
     }
 
-    private void UpdateChunks()
+    public void UpdateChunks()
     {
         LoadChunksInRange();
         ClearChunksOutOfRange();
+    }
+
+    public void UpdateMap()
+    {
+        _landMap.UpdateMap();
+        ReloadChunks();
     }
 
     private void LoadChunksInRange()
@@ -88,12 +90,11 @@ public class GridController
                 Vector3Int position = new Vector3Int(x * 16 + i, y * 16 + j, 0);
                 if (setMode)
                 {
-                    TileBase tile = _currentMap.GetTile(position.x, position.y);
+                    TileBase tile = _landMap.GetTile(position.x, position.y);
                     int rot = Random.Range(0, 3);
                     Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0f, 0f, 90f * rot), Vector3.one);
                     _tileMap.SetTile(position, tile);
                     _tileMap.SetTransformMatrix(position, matrix);
-
                 }
                 else
                 {
