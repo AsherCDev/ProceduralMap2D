@@ -14,9 +14,11 @@ public class PlayerController : MonoBehaviour
     {
         _vfx = transform.GetChild(0);
         _rb = GetComponent<Rigidbody2D>();
-        _angle = -2;
-        EventManager.instance.UpdateChunks();
         Dynamic.Player.playerTransform = _vfx;
+
+        _angle = -2;
+        
+        EventManager.instance.UpdateChunks();
     }
 
     void Update()
@@ -46,6 +48,7 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(Rotate(new Vector3(0, 0, angle * Mathf.Rad2Deg - 90), Constant.Player.rotationTime));
                 _angle = angle;
             }
+            
             Dynamic.Player.UpdatePosition(transform.position);
         }
         else

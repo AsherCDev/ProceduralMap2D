@@ -16,7 +16,7 @@ public class UIController : MonoBehaviour
 
     private void Start()
     {
-        // Init UI components
+        // Init UI values
         scaleSlider.minValue = 20;
         scaleSlider.maxValue = 150;
         scaleSlider.value = 100;
@@ -35,6 +35,7 @@ public class UIController : MonoBehaviour
 
     private void ApplyChanges()
     {
+        // Sets functional values to equal ui values
         Dynamic.Player.speed = speedSlider.value;
         Dynamic.MapData.scale = scaleSlider.value;
         Dynamic.MapData.waterLevel = waterLevel.value;

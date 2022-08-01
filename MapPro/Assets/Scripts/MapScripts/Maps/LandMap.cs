@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.Tilemaps;
 using UnityEngine;
 
-public class LandMap
+public class LandMap : Map
 {
     private PerlinNoise _heightMap = new PerlinNoise(Dynamic.MapData.scale, Constant.Map.range, Constant.Map.seed);
     private static PerlinNoise _heatMap = new PerlinNoise(250, 10, new Vector2(23628, 2479));
