@@ -18,4 +18,6 @@ public class GameAssets : MonoBehaviour
     
     public Biome defaultBiome;
     public List<Biome> biomes;
+
+    public List<TileBase> rocks;
 }

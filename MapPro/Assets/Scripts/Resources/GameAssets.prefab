@@ -44,12 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ecfa7bf71f24c54a59914ba7d1b6fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  landTiles:
-  - {fileID: 11400000, guid: 06304cfe854530147b83ef79fc6edf59, type: 2}
-  - {fileID: 11400000, guid: 01a76f70c92386c4689c66c442748651, type: 2}
-  - {fileID: 11400000, guid: fef340a61f0dd6246b83cdd0b8ff7607, type: 2}
-  - {fileID: 11400000, guid: 987e3f72fe6f87247a0bd0d35ec7beed, type: 2}
-  - {fileID: 11400000, guid: 22cac786071572d4790520f3a0d845da, type: 2}
   defaultBiome: {fileID: 11400000, guid: ffad9e727e9809a4d9fd654cc2faabb3, type: 2}
   biomes:
   - {fileID: 11400000, guid: 00fb14bc3394bab40894b3de4f15dfcd, type: 2}
@@ -57,3 +51,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 170a0a569e312e441ac5641f6a23f01c, type: 2}
   - {fileID: 11400000, guid: 86f36dbc79da2a744a10f4105c9a4020, type: 2}
   - {fileID: 11400000, guid: c2a3f2f6a9c3a084594fcf2adc026b69, type: 2}
+  rocks:
+  - {fileID: 11400000, guid: 43a7f600773e74a44873be8c204c563c, type: 2}
+  - {fileID: 11400000, guid: 479cf3d2dc6ee3f4099c688fcc77e56a, type: 2}
+  - {fileID: 11400000, guid: cca859ae34e8e76439e3c2b6d5055749, type: 2}

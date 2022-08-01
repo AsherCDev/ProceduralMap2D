@@ -30,6 +30,8 @@ public static class Dynamic
 
     public static class MapData
     {
+        public static LandMap landMap = new LandMap();
+        
         public static float waterLevel;
         public static float scale;
     }

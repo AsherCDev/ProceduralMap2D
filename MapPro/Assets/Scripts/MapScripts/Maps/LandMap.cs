@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine.Tilemaps;
 using UnityEngine;
 
-public class LandMap : Map
+public class LandMap
 {
     private PerlinNoise _heightMap = new PerlinNoise(Dynamic.MapData.scale, Constant.Map.range, Constant.Map.seed);
-    private static PerlinNoise _heatMap = new PerlinNoise(250, 10, new Vector2(23628, 2479));
-    private static PerlinNoise _rainMap = new PerlinNoise(150, 10, new Vector2(98428, 5479));
     private static PerlinNoise _edgeNoise = new PerlinNoise(12, 2, new Vector2(5000, 79278));
 
     private int GetLayer(float height)
@@ -20,7 +18,7 @@ public class LandMap : Map
         return 3;
     }
 
-    private Biome GetBiome(int x, int y)
+    public Biome GetBiome(int x, int y)
     {
         float heat = _heatMap.GetValue(x, y) + _edgeNoise.GetValue(x, y) / 4;
         float rain = _rainMap.GetValue(x, y) + _edgeNoise.GetValue(x, y) / 4;
