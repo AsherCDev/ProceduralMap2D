@@ -8,9 +8,6 @@ using Random = UnityEngine.Random;
 public class GroundController
 {
     private Tilemap _tileMap;
-
-
-    private List<Vector2Int> _loadedChunks = new List<Vector2Int>();
     
     public GroundController(Tilemap tilemap)
     {

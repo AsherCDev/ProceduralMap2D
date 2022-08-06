@@ -24,7 +24,10 @@ public class LandFeatureController
                 {
                     if (_featureMap.GetTile(position.x, position.y))
                     {
+                        int rot = Random.Range(0, 3);
+                        Matrix4x4 matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0f, 0f, 90f * rot), Vector3.one);
                         _tileMap.SetTile(position, _featureMap.GetTile(position.x, position.y));
+                        _tileMap.SetTransformMatrix(position, matrix);
                     }
                 }
                 else

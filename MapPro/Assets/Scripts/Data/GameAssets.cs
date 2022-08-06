@@ -20,4 +20,5 @@ public class GameAssets : MonoBehaviour
     public List<Biome> biomes;
 
     public List<TileBase> rocks;
+    public TileBase pineTree;
 }
