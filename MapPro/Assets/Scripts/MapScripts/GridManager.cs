@@ -20,7 +20,6 @@ public class GridManager : MonoBehaviour
         featureController = new LandFeatureController(featureGrid);
         EventManager.instance.onChunkUpdate += UpdateChunks;
         EventManager.instance.onMapUpdate += UpdateMaps;
-
     }
 
     private void UpdateChunks()

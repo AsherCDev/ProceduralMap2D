@@ -1,16 +1,20 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 public class UIController : MonoBehaviour
 {
+    public TextMeshProUGUI seedInput;
+    
     public Slider scaleSlider;
     public Slider biomeScaleSlider;
     public Slider speedSlider;
     public Slider waterLevel;
     public Slider sharpnessSlider;
+    
     public Button applyButton;
     public Button exitButton;
 
@@ -51,6 +55,10 @@ public class UIController : MonoBehaviour
         Dynamic.MapData.biomeScale = biomeScaleSlider.value;
         Dynamic.MapData.waterLevel = waterLevel.value;
         Dynamic.MapData.sharpness = sharpnessSlider.value;
+
+        if(seedInput.text != null){
+                Dynamic.MapData.seed = seedInput.text;
+        }
 
         EventManager.instance.UpdateMap();
     }

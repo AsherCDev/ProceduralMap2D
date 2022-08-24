@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class LandMap
 {
-    private PerlinNoise _heightMap = new PerlinNoise(Dynamic.MapData.scale, Constant.Map.range, Constant.Map.seed);
-    private static PerlinNoise _heatMap = new PerlinNoise(250, Constant.Map.range, new Vector2(23628, 2479));
-    private static PerlinNoise _rainMap = new PerlinNoise(100, Constant.Map.range, new Vector2(98428, 5479));
-    private static PerlinNoise _edgeNoise = new PerlinNoise(10, 2, new Vector2(5000, 79278));
+    private PerlinNoise _heightMap = new PerlinNoise(Dynamic.MapData.scale, Constant.Map.perlinRange, Constant.Map.defaultSeed);
+    private static PerlinNoise _heatMap = new PerlinNoise(250, Constant.Map.perlinRange,Constant.Map.defaultSeed);
+    private static PerlinNoise _rainMap = new PerlinNoise(100, Constant.Map.perlinRange, Constant.Map.defaultSeed);
+    private static PerlinNoise _edgeNoise = new PerlinNoise(10, 2, Constant.Map.defaultSeed);
 
     private int GetLayer(float height)
     {
@@ -56,9 +56,9 @@ public class LandMap
 
     public void UpdateMap()
     {
-        _heightMap = new PerlinNoise(Dynamic.MapData.scale, Constant.Map.range, Constant.Map.seed);
-        _heatMap = new PerlinNoise(5 * Dynamic.MapData.biomeScale, Constant.Map.range, new Vector2(23628, 2479));
-        _rainMap = new PerlinNoise(2 * Dynamic.MapData.biomeScale, Constant.Map.range, new Vector2(98428, 5479));
-        _edgeNoise = new PerlinNoise(Dynamic.MapData.sharpness, 2, new Vector2(5000, 79278));
+        _heightMap = new PerlinNoise(Dynamic.MapData.scale, Constant.Map.perlinRange, SeedGenerator.GetSeed(1));
+        _heatMap = new PerlinNoise(5 * Dynamic.MapData.biomeScale, Constant.Map.perlinRange, SeedGenerator.GetSeed(2));
+        _rainMap = new PerlinNoise(2 * Dynamic.MapData.biomeScale, Constant.Map.perlinRange, SeedGenerator.GetSeed(3));
+        _edgeNoise = new PerlinNoise(Dynamic.MapData.sharpness, 2, SeedGenerator.GetSeed(4));
     }
 }

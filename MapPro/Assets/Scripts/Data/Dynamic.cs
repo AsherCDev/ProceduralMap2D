@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,6 +32,8 @@ public static class Dynamic
     public static class MapData
     {
         public static LandMap landMap = new LandMap();
+
+        public static String seed;
         
         public static float waterLevel;
         public static float scale;
