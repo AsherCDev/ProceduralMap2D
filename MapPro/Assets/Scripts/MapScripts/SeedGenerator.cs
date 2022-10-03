@@ -11,6 +11,7 @@ public static class SeedGenerator
     {
         if (Dynamic.MapData.seed != null)
         {
+            // Generates unique coordinates for any given string by converting and manipulating each character
             int baseValue = 0;
             List<char> chars = new List<char>();
             chars.AddRange(Dynamic.MapData.seed);

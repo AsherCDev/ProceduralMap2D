@@ -16,7 +16,7 @@ public class UIController : MonoBehaviour
     public Slider sharpnessSlider;
     
     public Button applyButton;
-    public Button exitButton;
+    //public Button exitButton;
 
     public RectTransform miniMapArrow;
 
@@ -43,7 +43,7 @@ public class UIController : MonoBehaviour
         sharpnessSlider.value = 10;
 
         applyButton.onClick.AddListener(ApplyChanges);
-        exitButton.onClick.AddListener(Exit);
+        //exitButton.onClick.AddListener(Exit);
         ApplyChanges();
     }
 

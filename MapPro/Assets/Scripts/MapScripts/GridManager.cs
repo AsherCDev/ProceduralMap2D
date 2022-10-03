@@ -18,6 +18,8 @@ public class GridManager : MonoBehaviour
     {
         groundController = new GroundController(groundGrid);
         featureController = new LandFeatureController(featureGrid);
+        
+        // Pairs the update methods to the cooresponding events
         EventManager.instance.onChunkUpdate += UpdateChunks;
         EventManager.instance.onMapUpdate += UpdateMaps;
     }
@@ -28,6 +30,7 @@ public class GridManager : MonoBehaviour
         ClearChunksOutOfRange();
     }
 
+    // Updates map generation data and reloads chunks
     private void UpdateMaps()
     {
         ClearAllChunks();
